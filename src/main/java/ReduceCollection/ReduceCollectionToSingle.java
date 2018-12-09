@@ -23,7 +23,7 @@ public class ReduceCollectionToSingle {
         sum = of(12, 23, 455, 45).map(x -> x - 2).sum();
         System.out.println("sum = " + sum);
 
-        //
+        //map to int
         Stream<String> wordStream = Stream.of("this is a sentence".split("\\s"));
         System.out.println("there are " + wordStream.count() + " words in this sentence.");
         Stream.of("this is a sentence".split("\\s")).mapToInt(w -> w.length()).forEach(System.out::println);

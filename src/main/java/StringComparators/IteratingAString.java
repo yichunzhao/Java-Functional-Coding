@@ -13,5 +13,7 @@ public class IteratingAString {
         long digitNum = str.chars().filter(Character::isDigit).count();
         System.out.println("digits in the sentence: " + digitNum);
 
+
+
     }
 }
