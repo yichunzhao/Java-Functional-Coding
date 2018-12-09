@@ -1,4 +1,4 @@
-package StringComparators;
+package ImplComparatorInterface;
 
 /**
  * @author YNZ
@@ -13,7 +13,9 @@ public class IteratingAString {
         long digitNum = str.chars().filter(Character::isDigit).count();
         System.out.println("digits in the sentence: " + digitNum);
 
-
+        //
+        long charANum = str.chars().filter(ch -> ch == 'a').count();
+        System.out.println("it contains 'a' : " + charANum);
 
     }
 }

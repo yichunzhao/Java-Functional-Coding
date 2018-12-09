@@ -1,26 +1,15 @@
 package DataModel;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Value;
 
 /**
  * @author YNZ
  */
 
-@Setter
-@Getter
-@EqualsAndHashCode
-@ToString
+@Value
 public final class Person implements Comparable<Person> {
-    final private String name;
-    final private int age;
-
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+    String name;
+    int age;
 
     @Override
     public int compareTo(Person p) {
