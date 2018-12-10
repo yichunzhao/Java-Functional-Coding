@@ -1,12 +1,8 @@
 package primitivestream;
 
-import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
-
-import static java.util.stream.Collectors.toList;
 
 /**
  * @author YNZ
@@ -28,8 +24,6 @@ public class UsingPrimitiveStream {
 
         long first = LongStream.of(123, 445, 445, 556, 8776, 8776).findFirst().getAsLong();
         System.out.println("first : " + first);
-
-
 
 
     }
