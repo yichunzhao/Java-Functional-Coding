@@ -1,7 +1,12 @@
 package primitivestream;
 
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
+import java.util.stream.LongStream;
+
+import static java.util.stream.Collectors.toList;
 
 /**
  * @author YNZ
@@ -15,7 +20,17 @@ public class UsingPrimitiveStream {
         double s = DoubleStream.of(12.3, 34.3, 11.2).sum();
         System.out.println(s);
 
-        
+        Double average = DoubleStream.of(122, 334, 444).average().getAsDouble();
+        System.out.println("average : = " + average);
+
+        long distinctNum = LongStream.of(123, 445, 445, 556, 8776, 8776).distinct().count();
+        System.out.println("distinct numbers : " + distinctNum);
+
+        long first = LongStream.of(123, 445, 445, 556, 8776, 8776).findFirst().getAsLong();
+        System.out.println("first : " + first);
+
+
+
 
     }
 

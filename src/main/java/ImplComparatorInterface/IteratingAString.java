@@ -17,5 +17,17 @@ public class IteratingAString {
         long charANum = str.chars().filter(ch -> ch == 'a').count();
         System.out.println("it contains 'a' : " + charANum);
 
+        //iterating each char in a string and print it
+        str.chars().forEach(IteratingAString::printChar);
+        System.out.println();
+
+        //removing specific char in a string.
+        String newStr = str.replace('a','A');
+        System.out.println(newStr);
+
+    }
+
+    public static void printChar(int ch) {
+        System.out.print((char) ch);
     }
 }
