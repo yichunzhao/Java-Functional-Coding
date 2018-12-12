@@ -7,12 +7,8 @@ import lombok.Value;
  */
 
 @Value
-public final class Person implements Comparable<Person> {
+public final class Person {
     String name;
     int age;
 
-    @Override
-    public int compareTo(Person p) {
-        return this.name.compareTo(p.name);
-    }
 }
