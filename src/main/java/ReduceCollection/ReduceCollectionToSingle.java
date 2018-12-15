@@ -23,15 +23,15 @@ public class ReduceCollectionToSingle {
         sum = of(12, 23, 455, 45).map(x -> x - 2).sum();
         System.out.println("sum = " + sum);
 
-        //map to int
+        //map to int stream; then may using sum method etc.
         Stream<String> wordStream = Stream.of("this is a sentence".split("\\s"));
         System.out.println("there are " + wordStream.count() + " words in this sentence.");
-        Stream.of("this is a sentence".split("\\s")).mapToInt(w -> w.length()).forEach(System.out::println);
+        Stream.of("this is a sentence".split("\\s")).mapToInt(String::length).forEach(System.out::println);
 
-        int totalLetters = Stream.of("this is a sentence".split("\\s")).mapToInt(w -> w.length()).sum();
+        int totalLetters = Stream.of("this is a sentence".split("\\s")).mapToInt(String::length).sum();
         System.out.println("total letters = " + totalLetters);
 
-        int maxLength = Stream.of("this is a sentence".split("\\s")).mapToInt(w -> w.length()).max().getAsInt();
+        int maxLength = Stream.of("this is a sentence".split("\\s")).mapToInt(String::length).max().getAsInt();
         System.out.println("max length word = " + maxLength);
 
 

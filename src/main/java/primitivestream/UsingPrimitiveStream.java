@@ -1,7 +1,6 @@
 package primitivestream;
 
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
@@ -30,14 +29,13 @@ public class UsingPrimitiveStream {
         System.out.println("first : " + first);
 
         //range exclusive
-        List<Integer> intRange = IntStream.range(1,5).boxed().collect(toList());
+        //map primitives to wrapper classes; using boxed operator
+        List<Integer> intRange = IntStream.range(1, 5).boxed().collect(toList());
         System.out.println("int range: " + intRange);
 
-        //range inclusive
-        List<Integer> intRangeExclusive = IntStream.rangeClosed(1,5).boxed().collect(toList());
+        //range inclusive, including right boundary.
+        List<Integer> intRangeExclusive = IntStream.rangeClosed(1, 5).boxed().collect(toList());
         System.out.println("int range exclusive:  " + intRangeExclusive);
-
-
 
 
     }

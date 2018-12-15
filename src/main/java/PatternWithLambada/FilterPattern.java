@@ -24,7 +24,6 @@ public class FilterPattern {
 
     static {
         persons = Stream.of(p1, p2, p3).collect(toList());
-
     }
 
     public static void main(String[] args) {
@@ -35,9 +34,9 @@ public class FilterPattern {
         List<Person> lessThan12Persons = persons.stream().filter(p -> p.getAge() < 12).collect(toList());
         System.out.println("less Than 12 Persons size : " + lessThan12Persons.size());
 
+        //
         List<Person> biggerThan13Persons = persons.stream().filter(p -> p.getAge() > 13).collect(toList());
         System.out.println("bigger Than 13 Persons size : " + biggerThan13Persons.size());
-
 
     }
 }
