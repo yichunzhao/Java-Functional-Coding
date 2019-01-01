@@ -17,4 +17,12 @@ public final class Person {
         this.age = age;
     }
 
+    public static boolean biggerEqual40(int age) {
+        return age >= 40;
+    }
+
+    public static boolean biggerEqual30(int age) {
+        return age >= 30;
+    }
+
 }
