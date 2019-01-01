@@ -23,14 +23,14 @@ public class InfiniteStream {
         List<Integer> listSkipped = Stream.iterate(0, (x) -> x + 2).skip(10).limit(10).collect(toList());
         System.out.println(listSkipped);
 
-        //stream generation using a supplier function ()->
+        //stream generation using a supplier function ()-> x+2
         List<Double> doubles = Stream.generate(() -> new Random().nextDouble()).limit(10).collect(toList());
         System.out.println(doubles);
 
         //all match is a terminal operation of a stream.
+        //using a predicate function.
         Boolean allBiggerThanOne = Stream.generate(() -> BigDecimal.valueOf(2L))
                 .limit(10).allMatch(x -> x.compareTo(BigDecimal.ONE) == 1);
         System.out.println(allBiggerThanOne);
-
     }
 }
