@@ -16,6 +16,9 @@ public class OptionalDetermineNullAndEmptyString {
         System.out.println(Optional.ofNullable("").isPresent());//true
         System.out.println(Optional.ofNullable(null).isPresent());//false
         System.out.println(Optional.ofNullable("").get());//true
+
+        System.out.println(Optional.of("Optional is a container... "));
+
     }
 
     public static boolean isEmptyNull(String str) {
