@@ -9,7 +9,6 @@ public class OptionalConditionalReturn {
     //Optional conditional return using filter API
 
     public static void main(String[] args) {
-
         Integer year = 2016;
         System.out.println(Boolean.toString(isYear2016(year)));
 
