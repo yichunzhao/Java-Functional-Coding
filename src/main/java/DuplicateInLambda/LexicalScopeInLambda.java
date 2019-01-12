@@ -18,7 +18,7 @@ public class LexicalScopeInLambda {
 //    private static Predicate<String> startsWithN = name -> name.startsWith("N");
 //    private static Predicate<String> startsWithM = name -> name.startsWith("M");
 
-    //Can be removed by introducing a scope parameter 'letter'
+    //Can be removed by introducing a scope parameter 'letter', lexical scoping.
     private static Predicate<String> checkIfStartWith(String letter) {
         return name -> name.startsWith(letter);
     }

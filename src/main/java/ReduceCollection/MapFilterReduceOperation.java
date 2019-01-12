@@ -27,7 +27,11 @@ public class MapFilterReduceOperation {
         long numOfAgeBiggerEqual30 = persons.stream().mapToInt(Person::getAge).filter(Person::biggerEqual30).count();
         System.out.println("number of person older than 40 years old = " + numOfAgeBiggerEqual30);
 
-
+        //stream-> map ->  reduce
+        System.out.println("total years: " + persons.stream().map(Person::getAge).reduce(0, Integer::sum));
+        System.out.println("total years: " + persons.stream().map(Person::getAge).reduce(0, (a, b) -> a + b));
+        System.out.println("total years: " + persons.stream().mapToInt(Person::getAge).sum());
+        System.out.println("total years: " +persons.stream().collect(Collectors.summarizingInt(Person::getAge)).getSum());
     }
 
 }

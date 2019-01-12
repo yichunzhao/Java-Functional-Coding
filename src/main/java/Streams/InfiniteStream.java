@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Stream;
 
+import static java.util.stream.Collectors.summingInt;
 import static java.util.stream.Collectors.toList;
 
 /**
@@ -32,5 +33,9 @@ public class InfiniteStream {
         Boolean allBiggerThanOne = Stream.generate(() -> BigDecimal.valueOf(2L))
                 .limit(10).allMatch(x -> x.compareTo(BigDecimal.ONE) == 1);
         System.out.println(allBiggerThanOne);
+
+        System.out.println(Stream.generate(Math::random).limit(30).collect(toList()));
+        System.out.println(Stream.iterate(0, (x) -> x + 2).skip(3).limit(5).collect(toList()));
+
     }
 }

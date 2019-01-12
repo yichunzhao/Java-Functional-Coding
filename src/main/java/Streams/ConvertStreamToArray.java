@@ -35,7 +35,7 @@ public class ConvertStreamToArray {
         List<Integer> userRoleTextLengths = stream().map(x -> x.getText()).mapToInt(s -> s.length()).boxed().collect(toList());
         System.out.println(userRoleTextLengths);
 
-        //convert a stream into an array, using int function generator
+        //convert a stream into an array, using an int function generator
         System.out.println(Arrays.toString(stream().toArray(UserRoles[]::new)));
     }
 
