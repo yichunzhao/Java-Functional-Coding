@@ -1,4 +1,4 @@
-package collectresult;
+package CollectingData;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -13,6 +13,12 @@ import java.util.stream.Stream;
  * @author YNZ
  */
 public class CollectingToNewMap {
+
+//    3 versions to collect into a map
+//    toMap(Function<? super T,? extends K> keyMapper, Function<? super T,? extends U> valueMapper)
+//    toMap(Function<? super T,? extends K> keyMapper, Function<? super T,? extends U> valueMapper, BinaryOperator<U> mergeFunction)
+//    toMap(Function<? super T,? extends K> keyMapper, Function<? super T,? extends U> valueMapper, BinaryOperator<U> mergeFunction, Supplier<M>  mapSupplier)
+
 
     public static void main(String[] args) {
         Map<String, String> countryLang = Stream.of(Locale.getAvailableLocales()).collect(

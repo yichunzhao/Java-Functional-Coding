@@ -1,4 +1,4 @@
-package collectresult;
+package CollectingData;
 
 import java.util.LinkedList;
 import java.util.List;

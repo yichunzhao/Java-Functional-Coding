@@ -21,10 +21,10 @@ public class MapFilterReduceOperation {
                 new Person("julia", 28),
                 new Person("jack", 30)).collect(Collectors.toList());
 
-        long numOfAgeBiggerThan40 = persons.stream().mapToInt(Person::getAge).filter(Person::biggerEqual40).count();
+        long numOfAgeBiggerThan40 = persons.stream().mapToInt(Person::getAge).filter(a->a>40).count();
         System.out.println("number of person older than 40 years old = " + numOfAgeBiggerThan40);
 
-        long numOfAgeBiggerEqual30 = persons.stream().mapToInt(Person::getAge).filter(Person::biggerEqual30).count();
+        long numOfAgeBiggerEqual30 = persons.stream().mapToInt(Person::getAge).filter(a->a==30).count();
         System.out.println("number of person older than 40 years old = " + numOfAgeBiggerEqual30);
 
         //stream-> map ->  reduce

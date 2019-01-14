@@ -1,6 +1,7 @@
 package PatternWithLambada;
 
 import DataModel.Person;
+import FunInterface.Criteria;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -21,12 +22,18 @@ public class FilterPattern {
     private static Person p3 = new Person("jerry", 16);
     private static List<Person> persons;
 
+    private static Criteria<Person> criteriaBiggerThan12 = inputs ->
+            inputs.stream().filter(x -> x.getAge() > 12).collect(toList());
+
+    private static Criteria<Person> criteriaBiggerThan14 = inputs ->
+            inputs.stream().filter(x -> x.getAge() > 14).collect(toList());
+
     static {
         persons = Stream.of(p1, p2, p3).collect(toList());
     }
 
     public static void main(String[] args) {
-        //filter pattern maybe removed by using stream filter
+        //meetCriteria pattern maybe removed by using stream meetCriteria
         System.out.println("persons size : " + persons.size());
 
         //lambada makes a light-weight design possible; and drawing out some old techniques out of our bags.
@@ -36,6 +43,11 @@ public class FilterPattern {
         //
         List<Person> biggerThan13Persons = persons.stream().filter(biggerThan13).collect(toList());
         System.out.println("bigger Than 13 Persons size : " + biggerThan13Persons.size());
+
+
+        //if using self-define functional interface
+        System.out.println("persons bigger than 12: " + criteriaBiggerThan12.meetCriteria(persons).size());
+        System.out.println("persons bigger than 14:" + criteriaBiggerThan14.meetCriteria(persons).size());
 
     }
 }

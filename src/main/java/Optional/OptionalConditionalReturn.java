@@ -6,7 +6,7 @@ import java.util.Optional;
  * @author YNZ
  */
 public class OptionalConditionalReturn {
-    //Optional conditional return using filter API
+    //Optional conditional return using meetCriteria API
 
     public static void main(String[] args) {
         Integer year = 2016;
@@ -17,7 +17,7 @@ public class OptionalConditionalReturn {
     }
 
     public static boolean isYear2016(Integer year) {
-        //the filter API runs an inline test on the wrapped class.
+        //the meetCriteria API runs an inline test on the wrapped class.
         Optional.ofNullable(year).orElseThrow(() -> new IllegalArgumentException("null argument..."));
         return Optional.of(year).filter(y -> y == 2016).isPresent();
     }
