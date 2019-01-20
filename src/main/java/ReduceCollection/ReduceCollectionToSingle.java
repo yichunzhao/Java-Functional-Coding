@@ -2,6 +2,7 @@ package ReduceCollection;
 
 import java.util.stream.Stream;
 
+import static java.util.stream.Collectors.summarizingInt;
 import static java.util.stream.IntStream.of;
 
 /**
@@ -34,6 +35,9 @@ public class ReduceCollectionToSingle {
         int maxLength = Stream.of("this is a sentence".split("\\s")).mapToInt(String::length).max().getAsInt();
         System.out.println("max length word = " + maxLength);
 
+        //The above can be simplified by using predefined collectors
+        int maxLength_ = Stream.of("this is a sentence".split("\\s")).collect(summarizingInt(String::length)).getMax();
+        System.out.println("max length word = " + maxLength_);
 
     }
 }
