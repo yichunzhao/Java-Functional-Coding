@@ -11,7 +11,9 @@ import static java.util.stream.Collectors.toList;
 /**
  * @author YNZ
  */
-public class InfiniteStream {
+public class StreamFromFunction {
+
+    //it may generate stream from a function
 
     public static void main(String[] args) {
         //iterate return infinite stream; unary function T=F(T)

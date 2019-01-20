@@ -36,6 +36,8 @@ public class ConvertStreamToArray {
         System.out.println(userRoleTextLengths);
 
         //convert a stream into an array, using an int function generator
+        //toArray uses a int function to generate an array.
+        //int function take an int as an input, and produce a result.
         System.out.println(Arrays.toString(stream().toArray(UserRoles[]::new)));
     }
 
